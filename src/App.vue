@@ -1,85 +1,117 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <div class="container">
+      <Header/>
     </div>
   </header>
 
-  <RouterView />
+  <main>
+    <div class="container">
+      <ReleaseList :releases="releases"/>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <a href="https://music.yandex.ru/label/1391371">© The North Bridge {{ new Date().getFullYear() }}</a>
+      </div>
+    </div>
+  </footer>
 </template>
 
+<script setup>
+import ReleaseList from "./components/ReleaseList.vue";
+import Header from "./components/Header.vue"
+
+let releases = [
+  {
+    link: "https://band.link/lSgXS",
+    title: "джаз",
+    cover: "https://avatars.yandex.net/get-music-content/4399834/9f68100d.a.17521367-1/m1000x1000",
+    artist: "pzk",
+    date: "2021",
+  },
+  {
+    link: "https://band.link/UW0O6",
+    title: "freestyle",
+    cover: "https://avatars.yandex.net/get-music-content/4010467/86f73c6e.a.14455648-1/m1000x1000",
+    artist: "lm",
+    date: "2021",
+  },
+  {
+    link: "https://music.yandex.ru/album/24331721/track/109842312",
+    title: "fat breaks (remix)",
+    cover: "https://avatars.yandex.net/get-music-content/5502420/d9e37d58.a.24331721-1/m1000x1000",
+    artist: "lm & fgrc & pzkbeats",
+    date: "2020",
+  },
+  {
+    link: "https://pzkbeats.fanlink.to/daily_routine",
+    title: "daily routine",
+    cover: "https://avatars.yandex.net/get-music-content/2433821/1366f20e.a.12291597-1/m1000x1000",
+    artist: "pzkbeats",
+    date: "2020",
+  },
+  {
+    link: "https://band.link/qC5iO",
+    title: "летний мотив",
+    cover: "https://avatars.yandex.net/get-music-content/2427101/5e181264.a.11564496-1/m1000x1000",
+    artist: "lm",
+    date: "2020",
+  },
+  {
+    link: "https://fanlink.to/1018",
+    title: "10'18",
+    cover: "https://avatars.yandex.net/get-music-content/176019/a44c8ae7.a.6110242-1/m1000x1000",
+    artist: "pzk &amp; lm",
+    date: "2018",
+  },
+  {
+    link: "https://fanlink.to/balticbreeze",
+    title: "baltic breeze",
+    cover: "https://avatars.yandex.net/get-music-content/114728/7be1e770.a.6259141-1/m1000x1000",
+    artist: "pzkbeats",
+    date: "2018",
+  },
+  {
+    link: "https://music.yandex.ru/album/24193250",
+    title: "loops from the park",
+    cover: "https://avatars.yandex.net/get-music-content/5878680/95cd3e19.a.24193250-1/m1000x1000",
+    artist: "pzkbeats",
+    date: "2017",
+  },
+  {
+    link: "https://thenorthbridge.biglink.to/demoloops",
+    title: "demoloops'15-16",
+    cover: "https://avatars.yandex.net/get-music-content/5878680/e54aa15b.a.24061638-1/m1000x1000",
+    artist: "pzkbeats",
+    date: "2016",
+  },
+  {
+    link: "https://music.yandex.ru/album/24057020",
+    title: "the north block",
+    cover: "https://avatars.yandex.net/get-music-content/5878680/9b7a9ed4.a.24057020-1/m1000x1000",
+    artist: "fgrc",
+    date: "2016",
+  },
+]
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+.footer {
   text-align: center;
-  margin-top: 2rem;
+  padding: 1.5rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.footer a {
+  color: black;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
