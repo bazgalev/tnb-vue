@@ -102,7 +102,8 @@ let releases = [
 <style scoped>
 .container {
   max-width: 1200px;
-  padding: 0 15px;
+  padding: 0px 15px;
+  margin: 0 auto;
 }
 
 .footer {

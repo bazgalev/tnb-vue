@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .logo-img {
