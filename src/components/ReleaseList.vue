@@ -32,4 +32,16 @@ defineProps({
   list-style-type: none;
   padding: 0;
 }
+
+@media screen and (min-width: 768px) {
+  .release-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .release-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 </style>
